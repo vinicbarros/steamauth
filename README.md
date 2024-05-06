@@ -18,8 +18,8 @@ First of all, you or your users need to install the SteamAuth Extension. You can
 **Note**: The Extension pass the data into your Backend. For that, you need to setup an Webhook Url under: www.steamwebapi.com. **Please contact us for more information for setting up the Webhook Url under Discord.
 Feedback from the Extension you can see in the console too.**
 
-
 ### Inventory Data
+
 This function returns the user's steam inventory.
 
 ```typescript
@@ -30,10 +30,10 @@ export default function App() {
     <button
       onClick={() =>
         getInventoryData({
-          game: '730',
-          webhook: 'https://your-webhook-url.com - not required',
-          ident: 'custom-ident-for-example-username-or-userid - not required',
-          host: 'your-host.com setting up under steamwebapi.com',
+          game: "730",
+          webhook: "https://your-webhook-url.com - not required",
+          ident: "custom-ident-for-example-username-or-userid - not required",
+          host: "your-host.com setting up under steamwebapi.com",
         })
       }
     >
@@ -41,10 +41,10 @@ export default function App() {
     </button>
   );
 }
-
 ```
 
 ### Trade History
+
 This function returns all the finished trades of the user.
 
 ```typescript
@@ -55,9 +55,9 @@ export default function App() {
     <button
       onClick={() =>
         getTradeHistory({
-          webhook: 'https://your-webhook-url.com - not required',
-          ident: 'custom-ident-for-example-username-or-userid - not required',
-          host: 'your-host.com setting up under steamwebapi.com',
+          webhook: "https://your-webhook-url.com - not required",
+          ident: "custom-ident-for-example-username-or-userid - not required",
+          host: "your-host.com setting up under steamwebapi.com",
         })
       }
     >
@@ -65,10 +65,10 @@ export default function App() {
     </button>
   );
 }
-
 ```
 
 ### Pending Trade Sent
+
 This function returns all the pending sent trades of the user.
 
 ```typescript
@@ -79,9 +79,9 @@ export default function App() {
     <button
       onClick={() =>
         getSentPendingTrades({
-          webhook: 'https://your-webhook-url.com - not required',
-          ident: 'custom-ident-for-example-username-or-userid - not required',
-          host: 'your-host.com setting up under steamwebapi.com',
+          webhook: "https://your-webhook-url.com - not required",
+          ident: "custom-ident-for-example-username-or-userid - not required",
+          host: "your-host.com setting up under steamwebapi.com",
         })
       }
     >
@@ -89,10 +89,10 @@ export default function App() {
     </button>
   );
 }
-
 ```
 
-### Received Trade Sent
+### Pending Trade Received
+
 This function returns all the pending received trades of the user.
 
 ```typescript
@@ -103,9 +103,9 @@ export default function App() {
     <button
       onClick={() =>
         getReceivedPendingTrades({
-          webhook: 'https://your-webhook-url.com - not required',
-          ident: 'custom-ident-for-example-username-or-userid - not required',
-          host: 'your-host.com setting up under steamwebapi.com',
+          webhook: "https://your-webhook-url.com - not required",
+          ident: "custom-ident-for-example-username-or-userid - not required",
+          host: "your-host.com setting up under steamwebapi.com",
         })
       }
     >
@@ -113,16 +113,46 @@ export default function App() {
     </button>
   );
 }
+```
 
+### Send Trade Offer
+
+This function send Trade Offer to your users. Send an Item out or get an Item in.
+
+```typescript
+import { sendTradeOffer } from "steamauth-extension";
+
+export default function App() {
+  return (
+    <button
+      onClick={() =>
+        sendTradeOffer({
+          partneritemassetids: [],
+          myitemassetids: ["36019072594"],
+          tradeoffermessage: "tradeoffermessage",
+          tradelink:
+            "https://steamcommunity.com/tradeoffer/new/?partner=111290214&token=k1Ty4tEi",
+          partnersteamid: "76561198071555942",
+          message: "This is a test message",
+          webhook: "https://your-webhook-url.com - not required",
+          ident: "custom-ident-for-example-username-or-userid - not required",
+          host: "your-host.com setting up under steamwebapi.com",
+        })
+      }
+    >
+      Get Pending Received Trades
+    </button>
+  );
+}
 ```
 
 ## Props
 
-| Name |  Type  | Description |
-|:-----|:--------:|------:|
-| host   | string | **Required**. The host url used by the extension. |
-| ident   |  string  | **Optional**. The identifier that you want to use. |
-| webhook   | string |  **Optional**. The host url used by extension.  |
+| Name    |  Type  |                                        Description |
+| :------ | :----: | -------------------------------------------------: |
+| host    | string |  **Required**. The host url used by the extension. |
+| ident   | string | **Optional**. The identifier that you want to use. |
+| webhook | string |      **Optional**. The host url used by extension. |
 
 ## Contributing
 
