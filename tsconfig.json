@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    //Base
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "checkJs": true,
+    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "declarationDir": "types",
+    "sourceMap": true,
+
+    //ESM
+    "lib": ["ES2022", "DOM"],
+
+    // Default
+    "target": "es5",
+
+    // Added
+    "module": "ESNext",
+    "outDir": "dist",
+    "moduleResolution": "node",
+
+    // Added
+    "emitDeclarationOnly": true
+  }
+}
