@@ -1,6 +1,6 @@
 {
   "name": "steamauth-extension",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "Provides an interface to use the SteamAuth extension service.",
   "main": "./dist/index.js",
