@@ -20,6 +20,10 @@
   "author": {
     "name": "Vinícius Barros"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinicbarros/steamauth"
+  },
   "license": "MIT",
   "devDependencies": {
     "@swc/core": "^1.5.3",
