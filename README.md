@@ -140,7 +140,7 @@ export default function App() {
         })
       }
     >
-      Get Pending Received Trades
+      Send Trade Offer
     </button>
   );
 }
